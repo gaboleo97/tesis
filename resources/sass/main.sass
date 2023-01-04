@@ -1,0 +1,270 @@
+a
+    text-decoration: none
+    color: black
+
+hr
+    width: 15%
+    border-top: 2px solid #9D9D9D
+    margin: 0 auto
+    margin-bottom: 2rem
+
+.bg-main
+    background-color: #CDE4E7 !important
+
+.content
+    background-color: #E6F0F1
+
+.selected-category
+    border-bottom: 2px solid black
+
+.card-txt-category
+    color: #9D9D9D
+    font-size: 12px
+.card-txt-author
+    color: #9D9D9D
+    font-size: 14px
+.card-txt-date
+    color: #9D9D9D
+    font-size: 14px
+
+.card
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2)
+    border-radius: 1.25rem
+    .card-img-top
+        border-top-left-radius: calc(1.25rem - 1px)
+        border-top-right-radius: calc(1.25rem - 1px)
+
+.post-txt
+    color: #9D9D9D
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300;1,500&display=swap");
+@import "./components/contacto.scss";
+@import "./components/multimedia.scss";
+@import "./components/nosotros.scss";
+@import "./components/productos.scss";
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: rgb(247,210,16);
+    background: linear-gradient(180deg, rgba(247,210,16,1) 30%, rgba(0,48,173,1) 60%, rgba(208,12,39,1) 90%);
+}
+/* logo*/
+.header__{
+
+    &logo{
+        height: 200px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-left: 4rem;
+    }
+    &nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #3F4B5B;
+        text-align: center;
+        margin-top: 2px;
+    }
+    &nav--mobile{
+        justify-content: right;
+        display: flex;
+        align-items: center;
+        background: #3F4B5B;
+        text-align: center;
+    }
+    &ul  {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        list-style-type: none;
+        overflow: hidden;
+        justify-content: center;
+        background-color:#3F4B5B;
+      }
+
+    &li {
+        color:#FFF;
+        flex: 1 1;
+        margin-top: 20px;
+
+    }
+
+    &li > a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 18px;
+        text-decoration: none;
+    }
+
+    &li > a:hover:not(.active) {
+        background-color: #000;
+    }
+
+    &menuprincipal .active {
+        background-color: #ffffff;
+    }
+    &menu--mobile{
+        margin-right: 2rem;
+        margin-bottom: 2px;
+    }
+
+}
+/* fin logo*/
+/* estilos del menu*/
+
+
+/* fin stilos del menu*/
+/* estilos del menu footer*/
+.footer__{
+
+    &menu{
+        background-color:#3F4B5B ;
+    }
+    &nav{
+        display: flex;
+        justify-content: start;
+        align-items: flex-start;
+        background: #3F4B5B;
+        text-align: start;
+        margin-top: 2px;
+    }
+    &nav--mobile{
+        justify-content: right;
+        display: flex;
+        align-items: right;
+        background: #3F4B5B;
+        text-align: center;
+    }
+    &ul  {
+        display: flex;
+        flex-wrap: nowrap;
+        list-style-type: none;
+        overflow: hidden;
+        background-color:#3F4B5B;
+      }
+
+    &li {
+         float: left;
+    }
+
+    &li > a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    &li > a:hover:not(.active) {
+        background-color: #000;
+    }
+
+    .footer .active {
+        background-color: #ffffff;
+    }
+    &menu--mobile{
+        margin-right: 2rem;
+        margin-bottom: 2px;
+    }
+
+}
+/* fin stilos del menu footer*/
+/* estilos del menu redes sociales*/
+$social:(
+facebook:#3b5998,
+twitter:#0079a8,
+instagram:#383435,
+whatsapp:#00BFA5,
+mail:#C5221F
+);
+.social {
+	position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	left: 0; /* Establecemos la barra en la izquierda */
+	top: 200px; /* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+
+    & ul {
+        list-style: none;
+        padding-left: 0rem;
+        overflow: hidden;
+        background-color:#3F4B5B
+    }
+
+    & li{
+        float: left;
+    }
+
+
+    & ul li a {
+        display: inline-block;
+        color:#fff;
+        background: #000;
+        padding: 10px 15px;
+        text-decoration: none;
+        -webkit-transition:all 500ms ease;
+        -o-transition:all 500ms ease;
+        transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+    }
+
+    @each $red ,$color in $social {
+        & ul li .icon-#{$red}{
+            background-color: $color;
+        }
+    }
+
+
+    & img{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    & ul li a:hover {
+        background: rgba(0, 0, 0, 0.411); /* Cambiamos el fondo cuando el usuario pase el mouse */
+        padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+    }
+
+
+}
+@mixin alto-ancho ($alto,$ancho){
+    height: $alto;
+    width: $ancho;
+}
+
+/* fin stilos del menu redes sociales*/
+.carouselPrincipal__item--img{
+    max-height: 500px;
+    @include alto-ancho(auto,auto);
+}
+
+
+.search{
+    &__title{
+        text-align: center;
+    }
+    &__bar{
+        border-radius: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .carouselPrincipal__item--img{
+        max-height: 100%;
+    }
+
+}
+@media screen and (max-width:425px) {
+    .header{
+
+        &__logo{
+            height: 100%;
+            width: 100%;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            margin-left:0rem;
+        }
+    }
+
+}
